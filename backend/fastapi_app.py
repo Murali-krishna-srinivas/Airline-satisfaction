@@ -10,7 +10,8 @@ app = FastAPI()
 
 
 # Health check (Render and uptime pingers can call this)
-@app.get("/")
+
+@app.api_route("/", methods=["GET", "HEAD"])
 def home():
     return {"status": "ok"}
 
